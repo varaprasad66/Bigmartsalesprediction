@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     return render_template("home.html")
 
-@app.route('/predict',methods=['POST','GET'])
+@app.route('/predict',methods=['POST'])
 def result():
     item_weight= float(request.form['item_weight'])
     item_fat_content=float(request.form['item_fat_content'])
