@@ -34,7 +34,7 @@ def result():
 
     Y_pred=model.predict(X_std)
 
-    return jsonify({'PREDICTION': float(Y_pred)})
+    return render_template("home.html",prediction_text="The Item_Outlet_Sales prediction is  {}".format(Y_pred))
 
 
 if __name__ == "__main__":
