@@ -1,7 +1,7 @@
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request,url_for,app
 import joblib
 import os
-import numpy as np
+import numpy as np   
 
 app = Flask(__name__)
 
@@ -10,8 +10,8 @@ app = Flask(__name__)
 def index():
     return render_template("home.html")
 
-@app.route('/predict',methods=['POST'])
-def result():
+@app.route('/predict',methods=['POST','GET'])
+def predict():
     item_weight= float(request.form['item_weight'])
     item_fat_content=float(request.form['item_fat_content'])
     item_visibility= float(request.form['item_visibility'])
